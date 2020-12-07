@@ -1,0 +1,20 @@
+
+<div fxLayout="row" style="background:lightblue; height: 100vh;">
+    <button mat-raised-button color="primary" (click)="openDialog()">Add Detail</button> 
+    <button mat-raised-button color="primary" (click)="openDialog()">Edit Detail</button> 
+    <button mat-raised-button color="primary" (click)="openDialog()">Delete Detail</button> 
+
+  <div *ngIf="selectedNode" class="tree__children-section">
+    <div> <b>Selected Node:</b> <br><div>name: {{selectedNode.name}}</div><br><b>children:</b> <span *ngFor="let children of selectedNode.children; let childrenIndex = index; last as last"
+        [ngClass]="{'tree__children-section__children--last': last}" class="tree__children-section__children">
+        {{childrenIndex+1}}. {{children.name}}</span><br>
+      <!-- <span *ngIf="!children" >No children</span></div>  -->
+    <!-- <div>id: {{selectedNode.id}}</div> -->
+    
+    <!-- <div>parentId: {{selectedNode.parentId}} <span *ngIf="!selectedNode.parentId" >No parent</span></div> -->
+  </div>
+  
+</div>
+
+  
+ 
